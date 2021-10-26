@@ -53,17 +53,68 @@ void Ex2(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
 	//Your codes here
+	int tg, k, j;
+    for(j=0;j<m-1;j++)
+    {
+        for(k=j+1;k<m;k++)
+        {
+            if(a[j][0]<a[k][0])
+            {    
+                tg=a[j][0];
+                a[j][0]=a[k][0];
+                a[k][0]=tg;
+            }
+        }
+    }
+	 for(j=0;j<m-1;j++)
+    {
+        for(k=j+1;k<m;k++)
+        {
+            if(a[j][2]<a[k][2])
+            {    
+                tg=a[j][2];
+                a[j][2]=a[k][2];
+                a[k][2]=tg;
+            }
+        }
+    }
+	for(j=0;j<m-1;j++)
+    {
+        for(k=j+1;k<m;k++)
+        {
+            if(a[j][1]>a[k][1])
+            {    
+                tg=a[j][1];
+                a[j][1]=a[k][1];
+                a[k][1]=tg;
+            }
+        }
+    }
+	 for(j=0;j<m-1;j++)
+    {
+        for(k=j+1;k<m;k++)
+        {
+            if(a[j][3]>a[k][3])
+            {    
+                tg=a[j][3];
+                a[j][3]=a[k][3];
+                a[k][3]=tg;
+            }
+        }
+    }
 
 	printArray(a, m, n);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) 
+{
 	//testing variable, applying it to your algorithm for auto-evaluating
 	int row = atoi(argv[1]);
 	int col = atoi(argv[2]);
 	argc-=3;
 	int testcase[argc],i;
-	for(i=0; i<argc;i++){
+	for(i=0; i<argc;i++)
+	{
 		testcase[i] = atoi(argv[i+3]);
 	}
 
